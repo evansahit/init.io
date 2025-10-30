@@ -1,0 +1,135 @@
+##############################
+# .NET / ASP.NET Core ignores
+##############################
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio working folders
+.vs/
+.vscode/
+.idea/
+
+# Build output and temp files
+[Tt]est[Rr]esult*/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+*.dbmdl
+*.dbproj.schemaview
+
+# Auto-generated files
+*.generated.cs
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.pdb
+*.pch
+*.ipch
+*.aps
+*.res
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+*_i.asm
+*_p.asm
+
+# ASP.NET publish
+*.Publish.xml
+*.pubxml
+*.publishproj
+appsettings.*.json
+wwwroot/lib/
+
+# Entity Framework migrations (optional)
+#migrations/
+
+# Rider, Resharper, etc.
+_ReSharper*/
+*.DotSettings.user
+
+# Other tooling
+*.ncrunchsolution
+*.ncrunchproject
+*.dotCover
+
+# Local environment config
+.env
+.env.*
+secrets.json
+
+##############################
+# Node / React ignores
+##############################
+
+# Node modules
+node_modules/
+
+# Build outputs
+build/
+dist/
+out/
+temp/
+tmp/
+
+# Dependency locks (optional)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Environment files
+.env.development
+.env.local
+.env.test
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# React-specific
+*.tsbuildinfo
+.cache/
+.eslintcache
+*.map
+
+##############################
+# OS-specific
+##############################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
