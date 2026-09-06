@@ -1,13 +1,12 @@
-namespace Init.Io.Models
+namespace Init.Io.API.Models;
+
+public class User : BaseEntity
 {
-    public class UserInDB
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string HashedPassword { get; set; } = string.Empty;
-        public string ProfilePhotoUrl { get; set; } = string.Empty;
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-    }
+    public string? Email { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string? ProfilePhotoUrl { get; set; }
+    public Guid OrganizationId { get; set; }
+    public required Organization Organization { get; set; }
+    public List<TeamUser> TeamUsers { get; set; } = [];
 }

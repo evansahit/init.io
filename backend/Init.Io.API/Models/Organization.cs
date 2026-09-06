@@ -1,13 +1,10 @@
-namespace Init.Io.Models
-{
-    public class Organization
-    {
-        public Guid id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public string LogoUrl { get; set; } = string.Empty;
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+namespace Init.Io.API.Models;
 
-    }
+public class Organization : BaseEntity
+{
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+    public string? LogoUrl { get; set; }
+    public List<User> Users { get; set; } = [];
+    public List<Team> Teams { get; set; } = [];
 }
