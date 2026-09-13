@@ -1,13 +1,15 @@
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Init.Io.API.Models;
+
+using Init.Io.API.Models.Entity;
 
 namespace Init.Io.API.Data.Configuration;
 
-public class TeamUserEntityTypeConfiguration : IEntityTypeConfiguration<TeamUser>
+public class TeamUserEntityTypeConfiguration : IEntityTypeConfiguration<TeamUserEntity>
 {
 
-    public void Configure(EntityTypeBuilder<TeamUser> builder)
+    public void Configure(EntityTypeBuilder<TeamUserEntity> builder)
     {
         builder.ToTable("team_users");
 

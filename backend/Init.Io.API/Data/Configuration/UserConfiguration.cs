@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using Init.Io.API.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+using Init.Io.API.Models.Entity;
 
 namespace Init.Io.API.Data.Configuration;
 
-public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
+public class UserEntityTypeConfiguration : IEntityTypeConfiguration<UserEntity>
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public void Configure(EntityTypeBuilder<UserEntity> builder)
     {
         builder.ToTable("users");
 
@@ -18,8 +19,6 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
         builder.Property(user => user.FirstName);
 
         builder.Property(user => user.LastName);
-
-        builder.Property(user => user.ProfilePhotoUrl);
 
         builder.Property(user => user.ProfilePhotoUrl);
 

@@ -1,18 +1,20 @@
+
 using Microsoft.EntityFrameworkCore;
-using Init.Io.API.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+using Init.Io.API.Models.Entity;
 
 namespace Init.Io.API.Data.Configuration;
 
-public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<Team>
+public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<TeamEntity>
 {
-    public void Configure(EntityTypeBuilder<Team> builder)
+    public void Configure(EntityTypeBuilder<TeamEntity> builder)
     {
         builder.ToTable("teams");
 
         builder.Property(team => team.Name)
             .IsRequired()
-            .HasMaxLength(128);
+            .HasMaxLength(EntityConfigConstants.TitleMaxLength);
 
         // Team names are unique within Organizations.
         // But team names are not unique in general.
