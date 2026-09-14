@@ -12,12 +12,13 @@ public class OrganizationEntityTypeConfiguration : IEntityTypeConfiguration<Orga
     {
         builder.ToTable("organizations");
 
-        builder.Property(team => team.Name)
+        builder.Property(organization => organization.Name)
             .IsRequired()
-            .HasMaxLength(EntityConfigConstants.TitleMaxLength);
+            .HasMaxLength(EntityConfigConstants.ShortMaxLength);
 
-        builder.Property(team => team.Description);
+        builder.Property(organization => organization.Description)
+            .HasMaxLength(EntityConfigConstants.LongestMaxLength);
 
-        builder.Property(team => team.LogoUrl);
+        builder.Property(organization => organization.LogoUrl);
     }
 }

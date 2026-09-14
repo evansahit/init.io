@@ -14,7 +14,7 @@ public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<TeamEntity>
 
         builder.Property(team => team.Name)
             .IsRequired()
-            .HasMaxLength(EntityConfigConstants.TitleMaxLength);
+            .HasMaxLength(EntityConfigConstants.ShortestMaxLength);
 
         // Team names are unique within Organizations.
         // But team names are not unique in general.
@@ -24,9 +24,11 @@ public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<TeamEntity>
             team.Name
         }).IsUnique();
 
-        builder.Property(team => team.Description);
+        builder.Property(team => team.Description)
+            .HasMaxLength(EntityConfigConstants.LongestMaxLength);
 
-        builder.Property(team => team.LogoUrl);
+        builder.Property(team => team.LogoUrl)
+            .HasMaxLength(EntityConfigConstants.LongestMaxLength);
 
         builder.HasOne(team => team.Organization)
             .WithMany(organization => organization.Teams)

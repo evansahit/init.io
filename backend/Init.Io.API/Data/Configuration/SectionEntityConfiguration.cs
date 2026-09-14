@@ -12,7 +12,7 @@ public class SectionEntityTypeConfiguration : IEntityTypeConfiguration<SectionEn
         builder.ToTable("sections");
 
         builder.Property(section => section.Title)
-            .HasMaxLength(EntityConfigConstants.TitleMaxLength)
+            .HasMaxLength(EntityConfigConstants.ShortestMaxLength)
             .IsRequired();
 
         builder.Property(section => section.OrdinalPosition)

@@ -12,13 +12,16 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<UserEntity>
         builder.ToTable("users");
 
         builder.Property(user => user.Email)
-            .IsRequired();
+            .IsRequired()
+            .HasMaxLength(EntityConfigConstants.ShortMaxLength);
         builder.HasIndex(user => user.Email)
             .IsUnique();
 
-        builder.Property(user => user.FirstName);
+        builder.Property(user => user.FirstName)
+            .HasMaxLength(EntityConfigConstants.ShortestMaxLength);
 
-        builder.Property(user => user.LastName);
+        builder.Property(user => user.LastName)
+            .HasMaxLength(EntityConfigConstants.ShortestMaxLength);
 
         builder.Property(user => user.ProfilePhotoUrl);
 
