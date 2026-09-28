@@ -7,4 +7,5 @@ public class OrganizationEntity : BaseEntity
     public string LogoUrl { get; private set; } = null!;
     public ICollection<UserEntity> Users { get; private set; } = [];
     public ICollection<TeamEntity> Teams { get; private set; } = [];
+    public ICollection<DepartmentEntity> Departments { get; private set; } = [];
 }

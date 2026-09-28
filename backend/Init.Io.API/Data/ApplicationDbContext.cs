@@ -6,6 +6,7 @@ namespace Init.Io.API.Data;
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
     public DbSet<OrganizationEntity> Organizations => Set<OrganizationEntity>();
+    public DbSet<DepartmentEntity> Departments => Set<DepartmentEntity>();
     public DbSet<TeamEntity> Teams => Set<TeamEntity>();
     public DbSet<UserEntity> Users => Set<UserEntity>();
     public DbSet<TeamUserEntity> TeamUsers => Set<TeamUserEntity>();

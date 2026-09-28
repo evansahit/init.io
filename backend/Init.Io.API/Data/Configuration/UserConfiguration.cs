@@ -28,7 +28,12 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<UserEntity>
         builder.HasOne(user => user.Organization)
             .WithMany(organization => organization.Users)
             .HasForeignKey(user => user.OrganizationId)
-            .IsRequired();
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasOne(user => user.Department)
+            .WithMany(department => department.Users)
+            .HasForeignKey(user => user.DepartmentId);
 
         // Team relation configuration is done in TeamUserConfiguration
     }

@@ -20,5 +20,11 @@ public class DepartmentEntityTypeConfiguration : IEntityTypeConfiguration<Depart
             .HasMaxLength(EntityConfigConstants.LongestMaxLength);
 
         builder.Property(department => department.LogoUrl);
+
+        builder.HasOne<OrganizationEntity>()
+            .WithMany(organization => organization.Departments)
+            .HasForeignKey(department => department.OrganizationId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

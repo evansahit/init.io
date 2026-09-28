@@ -1,4 +1,4 @@
-namespace Init.Io.API.Models.Domain;
+namespace Init.Io.API.Models.Enums;
 
 public enum ContentBlockMediaTypeEnum
 {

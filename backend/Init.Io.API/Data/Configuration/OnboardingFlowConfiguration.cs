@@ -19,7 +19,10 @@ public class OnboardingFlowEntityTypeConfiguration : IEntityTypeConfiguration<On
         builder.Property(organization => organization.Description)
             .HasMaxLength(EntityConfigConstants.LongestMaxLength);
 
-        // todo evan: finish implementing   
-        // builder.
+        builder.HasOne(onboardingFlow => onboardingFlow.Team)
+            .WithMany(team => team.OnboardingFlows)
+            .HasForeignKey(onboardingFlow => onboardingFlow.TeamId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

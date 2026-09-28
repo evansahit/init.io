@@ -1,4 +1,4 @@
-using Init.Io.API.Models.Domain;
+using Init.Io.API.Models.Enums;
 
 namespace Init.Io.API.Models.Entity;
 

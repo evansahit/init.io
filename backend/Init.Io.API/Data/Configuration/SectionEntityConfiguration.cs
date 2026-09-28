@@ -19,7 +19,7 @@ public class SectionEntityTypeConfiguration : IEntityTypeConfiguration<SectionEn
             .IsRequired();
 
         builder.HasOne<OnboardingFlowEntity>()
-            .WithMany(flow => flow.Sections)
+            .WithMany(onboardingFlow => onboardingFlow.Sections)
             .HasForeignKey(section => section.OnboardingFlowId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);

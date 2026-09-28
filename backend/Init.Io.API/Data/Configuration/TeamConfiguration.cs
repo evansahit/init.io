@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -17,10 +16,16 @@ public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<TeamEntity>
             .HasMaxLength(EntityConfigConstants.ShortestMaxLength);
 
         // Team names are unique within Organizations.
-        // But team names are not unique in general.
         builder.HasIndex(team => new
         {
             team.OrganizationId,
+            team.Name
+        }).IsUnique();
+
+        // Team names are unique within Departments.
+        builder.HasIndex(team => new
+        {
+            team.DepartmentId,
             team.Name
         }).IsUnique();
 
@@ -34,6 +39,10 @@ public class TeamEntityTypeConfiguration : IEntityTypeConfiguration<TeamEntity>
             .WithMany(organization => organization.Teams)
             .HasForeignKey(team => team.OrganizationId)
             .IsRequired();
+
+        builder.HasOne(team => team.Department)
+            .WithMany(department => department.Teams)
+            .HasForeignKey(team => team.DepartmentId);
 
         // User relation configuration is done in TeamUserConfiguration
 
