@@ -1,8 +1,10 @@
-using Init.Io.API.Models;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+using Init.Io.API.Models.Entity;
 namespace Init.Io.API.Data.Configuration;
+
 
 public class BaseEntityTypeConfiguration : IEntityTypeConfiguration<BaseEntity>
 {
